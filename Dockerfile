@@ -5,7 +5,7 @@ RUN apt-get install -y unzip wget bzip2 curl software-properties-common poppler-
 
 RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 \
-    git mercurial subversion tesseract-ocr
+    git mercurial subversion tesseract-ocr gcc
     
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /root/anaconda.sh && \
     /bin/bash /root/anaconda.sh -b -p /opt/conda && \
