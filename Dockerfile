@@ -1,5 +1,8 @@
 FROM ubuntu:18.04
 
+RUN apt-get update
+RUN apt-get install -y unzip wget bzip2 curl software-properties-common poppler-utils
+
 ENV MAVEN_VERSION 3.5.3
 RUN curl -f -L http://central.maven.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -C /opt -xzv
 ENV M2_HOME /opt/apache-maven-$MAVEN_VERSION
@@ -14,8 +17,6 @@ RUN ln -s /usr/java/bin/java /usr/bin/java
 RUN ln -s /usr/java/bin/javac /usr/bin/javac
 RUN ln -s /usr/java/bin/javadoc /usr/bin/javadoc
 
-RUN apt-get update
-RUN apt-get install -y unzip wget bzip2 curl software-properties-common poppler-utils
 
 RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 \
