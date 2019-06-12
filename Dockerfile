@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update
-RUN apt-get install -y unzip wget bzip2 curl software-properties-common poppler-utils git-lfs
+RUN apt-get install -y unzip wget bzip2 curl software-properties-common poppler-utils git-lfs build-essential
 
 ENV MAVEN_VERSION 3.5.3
 RUN curl -f -L http://central.maven.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -C /opt -xzv
